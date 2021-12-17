@@ -78,6 +78,9 @@ extension ViewController: PHPickerViewControllerDelegate {
             // 这里最好不用用load class 方法
             // tip：iPhone 更新到新版的iOS 11，可能会发现拍照时会自动存档成副文件名为.heic 或.heif 的文件
             //
+            
+            
+            
             for type in item.registeredTypeIdentifiers {
                 item.loadDataRepresentation(forTypeIdentifier: type, completionHandler:{(data, error) in
                     print("\(type)类型 -- 大小:\(data?.count ?? 0)")
