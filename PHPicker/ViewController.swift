@@ -49,20 +49,6 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(Cell.self, forCellWithReuseIdentifier: "Cell")
         view.addSubview(collectionView)
-        
-        
-        //                //设置collectionView的背景颜色
-        ////                collectionView.backgroundColor = UIColor.whiteColor()
-        //
-        //                //设置collectionView的代理和数据源
-        ////                collectionView.delegate = self
-        ////                collectionView.dataSource = self
-        //                //CollectionViewCell的注册
-        ////                collectionView.registerNib(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MyCell")
-        //                //header的注册
-        ////                collectionView.registerClass(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headView")
-        //
-        //                view.addSubview(collectionView)
     }
     
     override func didReceiveMemoryWarning() {
@@ -99,6 +85,7 @@ extension ViewController: PHPickerViewControllerDelegate {
                     guard let data = data, data.count > 0 else {
                         return
                     }
+                    print("\(type)类型 成功 -- 大小:\(data.count ?? 0)")
                     DispatchQueue.main.async {
                         guard let image = UIImage(data : data) else { return }
                         weakSelf?.list.append(image)
